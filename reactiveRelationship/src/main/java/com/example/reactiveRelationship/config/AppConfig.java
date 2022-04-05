@@ -15,6 +15,7 @@ public class AppConfig {
     public R2dbcCustomConversions customConversions() {
         List<Converter<?, ?>> converters = new ArrayList<>();
         converters.add(new BookReadConverter());
+        converters.add(new DepartmentReadConverter());
         return R2dbcCustomConversions.of(PostgresDialect.INSTANCE, converters);
         // deprecated: return new R2dbcCustomConversions(converters);
     }
